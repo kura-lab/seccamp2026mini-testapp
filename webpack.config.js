@@ -14,9 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License
  */
-import sass from 'sass';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-//import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -29,26 +27,22 @@ export default {
   output: {
     filename: 'components-bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/', 
   },
   module: {
     rules: [
       {
-        test: /\.json$/,
-        type: 'javascript/auto',
-        use: ['json-loader'],
-      },
-      {
         test: /\.scss$/,
         use: [
-          { loader: MiniCssExtractPlugin.loader },
-          { loader: 'css-loader' },
+          MiniCssExtractPlugin.loader,
+          'css-loader',
           {
             loader: 'sass-loader',
+            options: {
+              api: 'modern-compiler', 
+            },
           },
         ],
-      },
-      {
-        test: /components\.js$/,
       },
     ],
   },
@@ -56,13 +50,11 @@ export default {
     new MiniCssExtractPlugin({
       filename: 'styles-bundle.css',
     }),
-    //new HtmlWebpackPlugin({
-    //  template: './views/index.html',
-    //}),
   ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'public/'),
     },
+    extensions: ['.js', '.json', '.scss'],
   },
 };
