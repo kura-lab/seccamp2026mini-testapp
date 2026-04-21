@@ -52,7 +52,7 @@ app.set('views', './views');
 app.use(express.json());
 app.use(useragent.express());
 app.use(express.static('public'));
-//app.use(express.static('dist'));
+app.use(express.static('dist'));
 app.use(session({
   secret: 'secret', // You should specify a real secret here
   resave: true,
