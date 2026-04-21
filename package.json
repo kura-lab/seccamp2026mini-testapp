@@ -1,5 +1,5 @@
 {
-  "name": "passkeys-demo",
+  "name": "oidc-demo",
   "version": "1.0.0",
   "description": "Passkeys Demo",
   "main": "server.mjs",
@@ -8,8 +8,8 @@
     "build": "webpack",
     "dev": "NODE_ENV=localhost node server.mjs",
     "start": "node server.mjs",
-    "deploy": "npm run build && gcloud app deploy --project passkeys-demo app.yaml",
-    "emulator": "firebase emulators:start --only firestore --project passkeys-demo --import=./.data --export-on-exit",
+    "deploy": "npm run build && gcloud app deploy --project oidc-demo app.yaml",
+    "emulator": "firebase emulators:start --only firestore --project oidc-demo --import=./.data --export-on-exit",
     "clean": "rm -rf node_modules package-lock.json *-debug.log .data/ firebase-debug.log ui-debug.log firebase-export-*"
   },
   "dependencies": {
