@@ -26,14 +26,11 @@
     "firebase-tools": "^15.15.0",
     "lit": "^2.7.4",
     "material-components-web": "^14.0.0",
-    "openid-client": "^5.4.3",
-    "@simplewebauthn/server": "^13.3.0",
-    "@simplewebauthn/browser": "^13.3.0"
+    "openid-client": "^5.4.3"
   },
   "overrides": {
     "firebase-admin": "$firebase-admin",
-    "@google-cloud/storage": "^7.0.0",
-    "jsonwebtoken": "^9.0.0"
+    "@google-cloud/storage": "^7.0.0"
   },
   "engines": {
     "node": ">=22"
@@ -58,7 +55,6 @@
     "file-loader": "^6.2.0",
     "firebase-tools": "^15.15.0",
     "html-webpack-plugin": "^5.6.3",
-    "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^2.9.4",
     "sass": "^1.62.1",
     "sass-loader": "^13.3.1",
