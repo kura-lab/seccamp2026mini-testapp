@@ -90,10 +90,10 @@ app.get('/', (req, res) => {
 
 app.get('/discover', async (req, res) => {
   try {
-    const googleIssuer = await Issuer.discover('http://localhost:18080/realms/master');
-    console.log('Discovered issuer %s %O', googleIssuer.issuer, googleIssuer.metadata);
+    const issuer = await Issuer.discover('http://localhost:18080/realms/master');
+    console.log('Discovered issuer %s %O', issuer.issuer, issuer.metadata);
     return res.render('discover.html', {
-      oidcIssuer: JSON.stringify(googleIssuer, null, 2),
+      oidcIssuer: JSON.stringify(issuer, null, 2),
       project_name: process.env.PROJECT_NAME,
       title: RP_NAME,
     });
